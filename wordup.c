@@ -35,8 +35,8 @@ int main(){
 	do{
 		getNcheck(guess, columns, guessList);
 		decapitalize(wordSTR, guess, columns, guessList);
-		recapitalize(wordSTR, guess ,columns, guessList);
 		win = checkwin(wordSTR, guess, columns, guessList);
+		recapitalize(wordSTR, guess ,columns, guessList);
 		undertext(wordSTR, guess, columns, guessList, underText);
 		
 		if(win == 0){
@@ -152,10 +152,10 @@ void recapitalize(char wordSTR[], int guess, int cols, char guessList[][cols]){
 }
 
 bool checkwin(char wordSTR[], int guess, int cols, char guessList[][cols]){
-//checks for win by matching (has to account for capitals)
+//checks for win by matching
 	bool ret = 1;
 	for(int i = 0; i < wordSize; i++){
-		if(guessList[guess][i] + 32 != wordSTR[i]){
+		if(guessList[guess][i] != wordSTR[i]){
 			ret = 0;
 		}
 	}
